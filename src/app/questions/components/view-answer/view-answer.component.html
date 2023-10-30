@@ -1,0 +1,23 @@
+<div class="view_answer">
+  <title class="view_answer__title">Результат ответа</title>
+
+  <div class="view_answer__solution">
+    Вы ответели:
+    <span class="view_answer__solution_good" *ngIf="!isShowBadAnswer">Правильно</span>
+    <span class="view_answer__solution_bad" *ngIf="isShowBadAnswer">Неправильно</span>
+  </div>
+
+  <div class="view_answer__answers">
+    <div>
+      <b>Ваш ответ:</b> {{ answerData.answer.answer  }}
+    </div>
+
+    <div>
+      <b>Правильный ответ:</b> {{ answerData.correctAnswer.answer }}
+    </div>
+  </div>
+
+  <div class="view_answer__actions">
+    <button (click)="close()">ОК</button>
+  </div>
+</div>

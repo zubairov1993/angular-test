@@ -1,0 +1,42 @@
+.questions {
+  padding: 30px;
+
+  &__add {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    background: #cf9400;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 30px 10px;
+    margin-bottom: 10px;
+
+    &_icon {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

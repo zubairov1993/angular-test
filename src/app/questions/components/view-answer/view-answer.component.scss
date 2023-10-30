@@ -1,0 +1,48 @@
+::ng-deep .view_answer {
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__solution {
+    margin-bottom: 20px;
+
+    &_good {
+      color: #00cf11;
+    }
+
+    &_bad {
+      color: #cf1100;
+    }
+  }
+
+  &__answers {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+
+    button {
+      cursor: pointer;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      background: #cf9400;
+      color: #fff;
+    }
+  }
+
+  .mat-mdc-dialog-container .mdc-dialog__surface {
+    overflow: hidden;
+    padding: 10px;
+  }
+}

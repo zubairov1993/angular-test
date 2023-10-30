@@ -1,0 +1,37 @@
+<form class="b-form auth" [formGroup]="loginForm">
+  <div class="auth__wrapper">
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="loginForm.hasError('email') && !loginForm.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password">
+        <mat-error *ngIf="loginForm.hasError('password') && !loginForm.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <!-- [disabled]="loginForm.invalid || (isSubmitting$ | async)"
+    [class.opacity]="loginForm.invalid || (isSubmitting$ | async)" -->
+    <button class="auth__wrapper_btn"
+      (click)="onSubmit()"
+      type="button"
+      appearance="primary">
+      Login
+    </button>
+  </div>
+</form>

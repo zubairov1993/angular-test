@@ -1,0 +1,94 @@
+<div class="question_manager" [formGroup]="form">
+
+  <div class="question_manager__close">
+    <svg (click)="close()" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+      <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7
+        86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5
+        12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5
+        45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+    </svg>
+  </div>
+
+  <div class="question_manager__title">Введите вопрос:</div>
+  <div class="question_manager__question">
+    <mat-form-field appearance="outline">
+      <input matInput formControlName="question" placeholder="сколько будет 2 + 2 ?"/>
+    </mat-form-field>
+  </div>
+
+  <div class="question_manager__title">Введите варианты ответов:</div>
+  <div class="question_manager__answers">
+    <mat-form-field appearance="outline">
+      <mat-label>Введите правильный ответ</mat-label>
+      <textarea
+        formControlName="correctAnswer"
+        placeholder="2 + 2 будет 4"
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5">
+      </textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Введите неправильный ответ</mat-label>
+      <textarea
+        formControlName="answer1"
+        placeholder="2 + 2 будет 22"
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5">
+      </textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Введите неправильный ответ</mat-label>
+      <textarea
+        formControlName="answer2"
+        placeholder="2 + 2 будет 2+2"
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5">
+      </textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Введите неправильный ответ</mat-label>
+      <textarea
+        formControlName="answer3"
+        placeholder="2 + 2 будет 5"
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5">
+      </textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="question_manager__title">Определите уровень вопроса:</div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-select formControlName="selectedLevel" placeholder="Middle">
+        <mat-option *ngFor="let level of levels" [value]="level">
+          {{ level }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="question_manager__title">Ссылки: <button (click)="addLink()">Добавить ссылку</button></div>
+  <div class="question_manager__links">
+    <div formArrayName="links">
+      <div class="question_manager__links_link" *ngFor="let link of links.controls; let i = index">
+        <mat-form-field appearance="outline">
+          <input matInput [formControlName]="i" placeholder="https://learn.javascript.ru/"/>
+        </mat-form-field>
+        <button (click)="removeLink(i)">Удалить ссылку</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question_manager__add">
+    <button [class.disabled]="form.invalid" type="button" (click)="onSubmit()">Добавить вопрос</button>
+  </div>
+</div>
+

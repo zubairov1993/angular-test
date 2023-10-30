@@ -1,0 +1,14 @@
+<div class="show_question">
+  <title class="show_question__title">{{ questionData.question }}</title>
+
+  <div class="show_question__item" *ngFor="let answer of questionData?.answers" (click)="selectAnswer(answer)">
+    <span class="show_question__item_checkbox" *ngIf="answer.isSelect"></span>
+    <span>{{ answer.answer }}</span>
+  </div>
+
+  <div class="show_question__actions">
+    <button class="show_question__actions_other" (click)="goToOtherQuestion('prev')"><< Предыдущий вопрос</button>
+    <button class="show_question__actions_answer" [class.disabled]="!isSelectAnswer" (click)="answerToQuestion()">Ответить</button>
+    <button class="show_question__actions_other" (click)="goToOtherQuestion('next')">Следующий вопрос >></button>
+  </div>
+</div>

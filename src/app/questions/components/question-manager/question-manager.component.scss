@@ -1,0 +1,81 @@
+::ng-deep .question_manager {
+  position: relative;
+  padding: 20px;
+  max-height: 630px;
+  overflow-y: scroll;
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  &__question {
+    display: flex;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    button {
+      cursor: pointer;
+      padding: 5px;
+      font-size: 14px;
+      border: none;
+      background: #cf9400;
+      color: #fff;
+    }
+  }
+
+  &__answers {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__links {
+    &_link {
+      display: flex;
+
+      button {
+        height: 56px;
+        width: 100px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__add {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    button {
+      cursor: pointer;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      background: #cf9400;
+      color: #fff;
+    }
+  }
+
+  .mat-mdc-form-field {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: -12px;
+  }
+}
+
+::ng-deep .question-manager {
+  .mat-mdc-dialog-container .mdc-dialog__surface {
+    overflow: hidden;
+    padding: 10px;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
